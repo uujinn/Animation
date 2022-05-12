@@ -31,7 +31,9 @@ class ViewController: UIViewController {
         
 //        self.tableView.reloadData()
 //        self.tableView.cellForRow(at: [0,3]).moveRo\
-        UIView.transition(with: tableView, duration: 0.4, options: .autoreverse, animations: { [self] in self.tableView.moveRow(at: [0, Int(indexArr.randomElement()!)], to: [0, Int(indexArr.randomElement()!)]) })
+        UIView.transition(with: tableView, duration: 0.6, options: .beginFromCurrentState, animations: { [self] in self.tableView.moveRow(at: [0, Int(indexArr.randomElement()!)], to: [0, Int(indexArr.randomElement()!)]) })
+        UIView.transition(with: tableView, duration: 0.6, options: .beginFromCurrentState, animations: { [self] in self.tableView.moveRow(at: [0, Int(indexArr.randomElement()!)], to: [0, Int(indexArr.randomElement()!)]) })
+        UIView.transition(with: tableView, duration: 0.6, options: .beginFromCurrentState, animations: { [self] in self.tableView.moveRow(at: [0, Int(indexArr.randomElement()!)], to: [0, Int(indexArr.randomElement()!)]) })
 //        self.tableView.moveRow(at: [0, Int(indexArr.randomElement()!)], to: [0, Int(indexArr.randomElement()!)])
     }
     
