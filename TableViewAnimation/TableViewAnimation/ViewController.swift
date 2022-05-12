@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var arr: [String] = ["1st", "2nd", "3rd", "4th", "5th"]
+    var indexArr: [Int] = [0, 1, 2, 3, 4]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func pressedToRefresh(_ sender: Any) {
-        print(arr)
+//        print(arr)
         self.arr = arr.shuffled()
         
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
+//        self.tableView.cellForRow(at: [0,3]).moveRo\
+        UIView.transition(with: tableView, duration: 0.4, options: .autoreverse, animations: { [self] in self.tableView.moveRow(at: [0, Int(indexArr.randomElement()!)], to: [0, Int(indexArr.randomElement()!)]) })
+//        self.tableView.moveRow(at: [0, Int(indexArr.randomElement()!)], to: [0, Int(indexArr.randomElement()!)])
     }
     
 }
@@ -42,6 +46,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "SampleCell", for: indexPath) as! SampleCell
         
         cell.label.text = arr[indexPath.row]
+        print(indexPath)
         
         return cell
     }

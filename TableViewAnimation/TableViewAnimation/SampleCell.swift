@@ -9,10 +9,12 @@ import UIKit
 
 class SampleCell: UITableViewCell {
 
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        view.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
